@@ -17,7 +17,7 @@ import tqdm
 resnet152 = models.resnet152()
 # 从.pth文件中加载预训练参数
 # resnet152.load_state_dict(torch.load(r'model/hub/checkpoints/resnet152-394f9c45.pth',map_location='cpu'))
-#改写网络结构
+#改写网络结构 
 resnet152.fc= nn.Linear(2048,257)
 data_transform = transforms.Compose([
     transforms.Resize((224, 224)),

@@ -18,7 +18,7 @@ vgg19_bn = models.vgg19_bn()
 #改写网络结构
 vgg19_bn.classifier._modules['6'] = nn.Linear(4096,257)
 # 从.pth文件中加载预训练参数
-vgg19_bn.load_state_dict(torch.load(r'model/vgg19_bn.pth',map_location='cpu'))
+# vgg19_bn.load_state_dict(torch.load(r'model/vgg19_bn.pth',map_location='cpu'))
 data_transform = transforms.Compose([
     transforms.Resize((224, 224)),
     transforms.ToTensor(),
